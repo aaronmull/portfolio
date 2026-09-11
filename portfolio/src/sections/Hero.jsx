@@ -20,6 +20,8 @@ const skills = [
     "AutoCAD",
     "Java",
     "Verilog",
+    "Arduino",
+    "Raspberry Pi",
     "C++",
     "Python",
     "C",
@@ -102,6 +104,7 @@ export const Hero = () => {
                         </Button>
                         <AnimatedBorderButton>
                             <Download className="w-5 h-5"/>
+                            Download Resume
                         </AnimatedBorderButton>
                     </div>
                     
