@@ -1,5 +1,6 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton"
+import { useState } from "react";
 
 const GithubIcon = (props) => (
   <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" {...props}>
@@ -12,7 +13,7 @@ const projects = [
         title: "Boba Speed Data Hub",
         description: 
             "Mobile app for athletic trainer and athletes to monitor progression and foster competition.",
-        image: "/projects/project1_1.PNG",
+        images: ["/projects/project1_1.PNG", "/projects/project1_2.PNG"],
         tags: ["React Native", "Node.js", "Redis", "Postgres", "Data Visualization"],
         link: "https://github.com/aaronmull/boba_app",
         github: "https://github.com/aaronmull/boba_app",
@@ -21,7 +22,7 @@ const projects = [
         title: "Magnetic Microbots [in progress]",
         description:
             "Developing a controls system for microscopic magnetic robots with the end goal of utilizing the robots within the human body to assist with surgeries and drug delivery.",
-        image: "/projects/project3_1.JPG",
+        images: ["/projects/project3_2.gif", "/projects/project3_1.jpg"],
         tags: ["Magnetism", "Python", "MATLAB"],
         link: "",
         github: "",
@@ -30,12 +31,108 @@ const projects = [
        title: "Raspberry Pi Pokedex",
         description: 
             "Trained and quantized a TensorFlow image recognition model detect Pokemon with 90% accuracy.",
-        image: "/projects/project2_1.JPG",
+        images: ["/projects/project2_1.JPG"],
         tags: ["Python", "TensorFlow", "Raspberry Pi"],
         link: "",
         github: "",
     }
 ]
+
+const ProjectCard = ({ project, idx }) => {
+    const [imgIndex, setImgIndex] = useState(0)
+    const hasMultiple = project.images.length > 1
+
+    const goPrev = (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        setImgIndex((prev) => (prev === 0 ? project.images.length - 1 : prev - 1))
+    }
+
+    const goNext = (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        setImgIndex((prev) => (prev === project.images.length - 1 ? 0 : prev + 1))
+    }
+
+    return (
+        <div
+            className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
+            style={{ animationDelay: `${(idx + 1) * 100}ms` }}
+        >
+            {/* Image */}
+            <div className="relative overflow-hidden h-64 sm:h-72 bg-surface">
+                {/* Blurred backdrop fill — keeps frame full even for portrait/irregular images */}
+                <img 
+                    src={project.images[imgIndex]} 
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-40 transition-transform duration-700"
+                />
+
+                {/* Foreground image — always fully visible, never cropped */}
+                <img 
+                    src={project.images[imgIndex]} 
+                    alt={`${project.title} screenshot ${imgIndex + 1}`} 
+                    className="relative w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                />
+
+                <div
+                    className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60 pointer-events-none"
+                />
+
+                {/* Cycle Arrows */}
+                {hasMultiple && (
+                    <>
+                        <button onClick={goPrev} aria-label="Previous Image" className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full glass opacity-0 group-hover:opacity-100 hover:bg-primary hover:text-primary-foreground transition-all duration-300 z-10">
+                            <ChevronLeft className="w-4 h-4"/>
+                        </button>
+                        <button onClick={goNext} aria-label="Next Image" className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full glass opacity-0 group-hover:opacity-100 hover:bg-primary hover:text-primary-foreground transition-all duration-300 z-10">
+                            <ChevronRight className="w-4 h-4"/>
+                        </button>
+                    </>
+                )}
+
+                {/* Overlay Links */}
+                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {project.link && (
+                        <a href={project.link} className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all">
+                            <ArrowUpRight className="w-5 h-5"/>
+                        </a>
+                    )}
+                    {project.github && (
+                        <a href={project.github} className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all" >
+                            <GithubIcon className="w-5 h-5"/>
+                        </a>
+                    )}
+                </div>
+            </div>
+            {/* Content */}
+            <div className="p-6 space-y-4">
+                <div className="flex items-start justify-between">
+                    <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
+                        {project.title}
+                    </h3>
+                    <ArrowUpRight 
+                        className="w-5 h-5
+                        text-muted-foreground group-hover:text-primary
+                        group-hover:translate-x-1
+                        group-hover:-translate-y-1 transition-all"
+                    />
+                </div>
+                <p className="text-muted-foreground text-sm">
+                    {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, tagIdx) => (
+                        <span key={tagIdx} className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300">
+                            {tag}
+                        </span>
+                    ))}
+                </div>
+            </div>
+        </div>
+    )
+}
 
 export const Projects = () => {
     return (
@@ -61,57 +158,7 @@ export const Projects = () => {
                 {/* Projects Grid */}
                 <div className="grid md:grid-cols-2 gap-8">
                     {projects.map((project, idx) => (
-                        <div 
-                            key={idx} 
-                            className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
-                            style={{ animationDelay: `${(idx + 1) * 100}ms` }}
-                        >
-                            {/* Image */}
-                            <div className="relative overflow-hidden aspect-video">
-                                <img 
-                                    src={project.image} 
-                                    alt={project.title} 
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                />
-                                <div
-                                    className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60"
-                                />
-                                {/* Overlay Links */}
-                                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <a href={project.link} className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all">
-                                        <ArrowUpRight className="w-5 h-5"/>
-                                    </a>
-                                    <a href={project.github} className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all" >
-                                        <GithubIcon className="w-5 h-5"/>
-                                    </a>
-                                </div>
-                            </div>
-
-                            {/* Content */}
-                            <div className="p-6 space-y-4">
-                                <div className="flex items-start justify-between">
-                                    <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
-                                        {project.title}
-                                    </h3>
-                                    <ArrowUpRight 
-                                        className="w-5 h-5
-                                        text-muted-foreground group-hover:text-primary
-                                        group-hover:translate-x-1
-                                        group-hover:-translate-y-1 transition-all"
-                                    />
-                                </div>
-                                <p className="text-muted-foreground text-sm">
-                                    {project.description}
-                                </p>
-                                <div className="flex flex-wrap gap-2">
-                                    {project.tags.map((tag, tagIdx) => (
-                                        <span key={tagIdx} className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300">
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
+                        <ProjectCard key={idx} project={project} idx={idx} />
                     ))}
                 </div>
                 {/* View All CTA */}

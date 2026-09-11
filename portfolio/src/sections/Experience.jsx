@@ -44,7 +44,7 @@ export const Experience = () => {
                     <span className="text-4xl md:text-5xl font-bold mb-6 text-secondary-foreground tracking-wider uppercase animate-fade-in">
                         Career<span className="font-serif italic font-normal text-white"> Journey</span>
                     </span>
-                    <p className="text-muted-foreground animate-fade-in animation-delay-100">
+                    <p className="mt-4 text-muted-foreground animate-fade-in animation-delay-100">
                         A timeline of my career experience involving both 
                         engineering work and general employment history.
                     </p>
