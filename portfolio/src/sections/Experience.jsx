@@ -20,6 +20,7 @@ const experiences = [
     {
         period: "Feb. 2023 - Present",
         role: "Quick Service Food and Beverage Worker",
+        company: "DiDonato's Family Fun Center: Pin Deck",
         description:
             "Proactively memorized, prepared, and distributed over 50 company recipes. Fulfilled orders as shift lead with satisfactory speed while handling cash and other forms of payment.",
         technologies: ["Leadership", "Fast-Paced", "Organization", "Teamwork"],

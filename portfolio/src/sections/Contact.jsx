@@ -99,7 +99,7 @@ export const Contact = () => {
                         <span className="font-serif italic font-normal text-white"> in touch!</span>
                     </h2>
                     <p className="text-muted-foreground animate-fade-in animation-delay-200">
-                        I am open to any project propsals, internships, and work opportunities.
+                        I am open to any project proposals, internships, or work opportunities.
                         Send me a message so we can discuss how we can work together!
                     </p>
                 </div>

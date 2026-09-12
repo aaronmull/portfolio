@@ -22,7 +22,7 @@ const projects = [
         title: "Magnetic Microbots [in progress]",
         description:
             "Developing a controls system for microscopic magnetic robots with the end goal of utilizing the robots within the human body to assist with surgeries and drug delivery.",
-        images: ["/projects/project3_2.gif", "/projects/project3_1.jpg"],
+        images: ["/projects/project3_2.gif", "/projects/project3_1.JPG"],
         tags: ["Magnetism", "Python", "MATLAB"],
         link: "",
         github: "",
@@ -95,12 +95,12 @@ const ProjectCard = ({ project, idx }) => {
                 {/* Overlay Links */}
                 <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {project.link && (
-                        <a href={project.link} className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all">
+                        <a href={project.link} target="_blank" className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all">
                             <ArrowUpRight className="w-5 h-5"/>
                         </a>
                     )}
                     {project.github && (
-                        <a href={project.github} className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all" >
+                        <a href={project.github} target="_blank" className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all" >
                             <GithubIcon className="w-5 h-5"/>
                         </a>
                     )}

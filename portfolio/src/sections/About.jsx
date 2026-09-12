@@ -1,4 +1,4 @@
-import { Code2, Lightbulb, Users } from "lucide-react"
+import { Code2, Lightbulb, Users, Wrench } from "lucide-react"
 const highlights = [
     {
         icon: Code2,
@@ -17,6 +17,12 @@ const highlights = [
         title: "Learning",
         description:
             "Welcoming of every opportunity to learn new things, meet new people, and grow."
+    },
+    {
+        icon: Wrench,
+        title: "Building",
+        description:
+            "Driven by building tangible projects that solve problems through engineering and programming.",
     }
 ]
 
@@ -45,14 +51,9 @@ export const About = () => {
                             </p>
                             <p>
                                 Throughout my time at Rowan, I have gained invaluable experience in both engineering and athletics while 
-                                maintaining a 4.0 GPA. My peers have continuously inspired me to keep developing my skills in both areas. 
-                                Through personal projects and collaborative classwork, I have built a passion for finding solutions that 
-                                bring quantifiable results.
-                            </p>
-                            <p>
-                                As an NCAA Track and Field athlete, I have learned the value of setting goals and working toward them with 
-                                consistency. Getting 1% better each day is far more valuable than trying to rush success, and my experiences 
-                                have proven that.
+                                maintaining a 4.0 GPA. My peers, both in the classroom and on the track, have continuously inspired me 
+                                to keep developing my skills. Through personal projects and collaborative classwork, I have built a passion 
+                                for finding solutions that bring quantifiable results.
                             </p>
                             <p>
                                 I am currently seeking internships or part-time positions related to electrical and computer engineering 

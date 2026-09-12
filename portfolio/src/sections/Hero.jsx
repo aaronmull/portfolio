@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronDown, Download } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ChevronDown } from "lucide-react";
 import { Button } from "../components/Button";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
@@ -27,6 +27,7 @@ const skills = [
     "C",
     "JavaScript",
     "HTML",
+    "TailwindCSS",
     "CSS",
     "Assembly",
     "Excel",
@@ -74,25 +75,22 @@ export const Hero = () => {
                         <div className="animate-fade-in">
                             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                                    Electrical and Computer Engineer
+                                    Electrical and Computer Engineering Student
                             </span>
                         </div>
 
                         {/* Headline (CHANGE) */}
                         <div className="space-y-4">
                             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                                Crafting <span className="text-primary glow-text">digital</span>
-                                <br />
-                                experiences with
-                                <br />
                                 <span className="font-serif italic font-normal text-white">
-                                    precision.
+                                    Aaron Mull
                                 </span>
+                                <span className="text-primary glow-text"> Portfolio</span>
                             </h1>
                             <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                                Hello, I'm Aaron Mull. I am an electrical and computer
-                                engineering student [elaborate more on the other things
-                                that are important to note without making it corny!]
+                                Hello, I am Aaron Mull. I'm an ECE student at Rowan University, 
+                                interested in robotics and embedded systems. I look forward to
+                                connecting with you!
                             </p>
                         </div>
                     </div>
@@ -103,8 +101,8 @@ export const Hero = () => {
                             Contact Me <ArrowRight className="w-5 h-5" />
                         </Button>
                         <AnimatedBorderButton>
-                            <Download className="w-5 h-5"/>
-                            Download Resume
+                            <ArrowUpRight className="w-5 h-5"/>
+                            View Resume
                         </AnimatedBorderButton>
                     </div>
                     
@@ -116,7 +114,7 @@ export const Hero = () => {
                             { icon: LinkedinIcon, href: "https://www.linkedin.com/in/aaron-mull-91369b334/" },
                             { icon: GithubIcon, href: "https://github.com/aaronmull" },
                         ].map((social, idx) => (
-                            <a key={idx} href={social.href} className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300">
+                            <a key={idx} href={social.href} target="_blank" className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300">
                                 {<social.icon className="w-5 h-5"/>}
                             </a>
                         ))}
