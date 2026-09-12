@@ -26,6 +26,42 @@ const experiences = [
         technologies: ["Leadership", "Fast-Paced", "Organization", "Teamwork"],
         current: true,
     },
+    {
+        period: "Sep. 2026 - Present",
+        role: "Learning Assistant",
+        company: "Rowan University College of Science & Mathematics",
+        description:
+            "Supporting 40+ students in understanding mechanics via weekly office hours and one-on-one sessions.",
+        technologies: ["Teaching", "Communication"],
+        current: true,
+    },
+    {
+        period: "Sep. 2026 - Present",
+        role: "Club Member",
+        company: "Robotics and Automation Society, Rowan University",
+        description:
+            "Attended weekly meetings and workshops to develop robotics skills and contribute to club projects.",
+        technologies: ["Robotics", "Collaboration"],
+        current: true,
+    },
+    {
+        period: "Sep. 2025 - Present",
+        role: "Club Member",
+        company: "Institute of Electrical and Electronic Engineers, Rowan University",
+        description:
+            "Attended biweekly meetings, workshops, and info sessions for hands-on skills, networking, and career growth.",
+        technologies: ["Soldering", "Programming", "Networking"],
+        current: true,
+    },
+    {
+        period: "Sep. 2024 - Present",
+        role: "Track and Field Team Representative",
+        company: "Student Athlete Advisory Committee, Rowan University Athletics",
+        description:
+            "Relay announcements from the athletic department to teammates. Volunteer for events hosted by the athletic department.",
+        technologies: ["Leadership", "Community Service"],
+        current: true,
+    },
 ]
 
 export const Experience = () => {
@@ -43,17 +79,18 @@ export const Experience = () => {
                 {/* Section Header */}
                 <div className="max-w-3xl mb-16">
                     <span className="text-4xl md:text-5xl font-bold mb-6 text-secondary-foreground tracking-wider uppercase animate-fade-in">
-                        Career<span className="font-serif italic font-normal text-white"> Journey</span>
+                        Experience<span className="font-serif italic font-normal text-white"> & Clubs</span>
                     </span>
                     <p className="mt-4 text-muted-foreground animate-fade-in animation-delay-100">
-                        A timeline of my career experience involving both 
-                        engineering work and general employment history.
+                        A timeline of my career experiences, including both 
+                        engineering work, employment history, clubs, and other
+                        extracurricular involvement.
                     </p>
                 </div>
 
                 {/* Timeline */}
                 <div className="relative">
-                    <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(32,178,166,0.8)]"/>
+                    <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/70 via-primary/50 to-primary/5 md:-translate-x-1/2 shadow-[0_0_25px_rgba(32,178,166,0.8)]"/>
 
                     {/* Experiences */}
                     <div className="space-y-12">

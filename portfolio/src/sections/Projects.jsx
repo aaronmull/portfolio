@@ -22,7 +22,7 @@ const projects = [
         title: "Magnetic Microbots [in progress]",
         description:
             "Developing a controls system for microscopic magnetic robots with the end goal of utilizing the robots within the human body to assist with surgeries and drug delivery.",
-        images: ["/projects/project3_2.gif", "/projects/project3_1.JPG"],
+        images: ["/projects/project3_2.gif", "/projects/project3_1.jpg"],
         tags: ["Magnetism", "Python", "MATLAB"],
         link: "",
         github: "",

@@ -93,31 +93,32 @@ export const Hero = () => {
                                 connecting with you!
                             </p>
                         </div>
-                    </div>
-
-                    {/* CTAs */}
-                    <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-                        <Button size="lg">
-                            Contact Me <ArrowRight className="w-5 h-5" />
-                        </Button>
-                        <AnimatedBorderButton>
-                            <ArrowUpRight className="w-5 h-5"/>
-                            View Resume
-                        </AnimatedBorderButton>
-                    </div>
-                    
-                    {/* Social Links */}
-                    
-                    <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
-                        <span>Follow: </span>
-                        {[
-                            { icon: LinkedinIcon, href: "https://www.linkedin.com/in/aaron-mull-91369b334/" },
-                            { icon: GithubIcon, href: "https://github.com/aaronmull" },
-                        ].map((social, idx) => (
-                            <a key={idx} href={social.href} target="_blank" className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300">
-                                {<social.icon className="w-5 h-5"/>}
+                        {/* CTAs */}
+                        <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
+                            <a href="#contact">
+                                <Button size="lg">
+                                    Contact Me <ArrowRight className="w-5 h-5" />
+                                </Button>
                             </a>
-                        ))}
+                            <AnimatedBorderButton>
+                                <ArrowUpRight className="w-5 h-5"/>
+                                View Resume
+                            </AnimatedBorderButton>
+                        </div>
+                        
+                        {/* Social Links */}
+                        
+                        <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+                            <span>Follow: </span>
+                            {[
+                                { icon: LinkedinIcon, href: "https://www.linkedin.com/in/aaron-mull-91369b334/" },
+                                { icon: GithubIcon, href: "https://github.com/aaronmull" },
+                            ].map((social, idx) => (
+                                <a key={idx} href={social.href} target="_blank" className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300">
+                                    {<social.icon className="w-5 h-5"/>}
+                                </a>
+                            ))}
+                        </div>
                     </div>
                     
                     {/* Right Column - Profile Image */}
@@ -125,7 +126,7 @@ export const Hero = () => {
                         {/* Profile Image */}
                         <div className="relative max-w-md mx-auto">
                             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" />
-                            <div className="relative glass rounded-2xl p-2 glow-border">
+                            <div className="relative glass rounded-3xl p-2 glow-border">
                                 <img src="/meatball.png" alt="Aaron Mull" className="w-full aspect-[4/5] object-cover rounded-2xl"/>
 
                                 {/* Floating Badge */}
