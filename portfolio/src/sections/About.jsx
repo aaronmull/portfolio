@@ -39,8 +39,9 @@ export const About = () => {
 
                         {/* Headline */}
                         <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
-                            Building the future,
-                            <span className="font-serif italic font-normal text-white"> one component at a time.</span>
+                            Learning,
+                            <span className="font-serif italic font-normal text-white"> building, </span>
+                            growing.
                         </h2>
                         <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
                             <p>

@@ -5,7 +5,8 @@ const experiences = [
         company: "ECE Resource Center - Rowan University",
         description:
             "Designed and maintained ECERC website, assembled and soldered PCBs, and filled component orders.",
-        technologies: ["Soldering", "PCB Assembly", "Programming", "Collaboration"],
+        technologies: ["Soldering", "PCB Assembly", "3-D Printing", "Programming", "Collaboration"],
+        logo: "/ecerc.jpeg",
         current: true,
     },
     {
@@ -15,6 +16,7 @@ const experiences = [
         description:
             "Assisted project manager in reading schematics, designing panel schedules, and obeying electrical codes. Utilized Revit to generate mock-ups involving power distribution, lighting systems, and load calculations.",
         technologies: ["Revit", "NEC Codes", "Scheduling", "Mock-Ups"],
+        logo: "/cjwatson.jpeg",
         current: false,
     },
     {
@@ -24,6 +26,7 @@ const experiences = [
         description:
             "Proactively memorized, prepared, and distributed over 50 company recipes. Fulfilled orders as shift lead with satisfactory speed while handling cash and other forms of payment.",
         technologies: ["Leadership", "Fast-Paced", "Organization", "Teamwork"],
+        logo: "/didonatos.jpeg",
         current: true,
     },
     {
@@ -33,6 +36,7 @@ const experiences = [
         description:
             "Supporting 40+ students in understanding mechanics via weekly office hours and one-on-one sessions.",
         technologies: ["Teaching", "Communication"],
+        logo: "/rowancsm.jpeg",
         current: true,
     },
     {
@@ -42,6 +46,7 @@ const experiences = [
         description:
             "Attended weekly meetings and workshops to develop robotics skills and contribute to club projects.",
         technologies: ["Robotics", "Collaboration"],
+        logo: "/rowanras.jpg",
         current: true,
     },
     {
@@ -51,6 +56,7 @@ const experiences = [
         description:
             "Attended biweekly meetings, workshops, and info sessions for hands-on skills, networking, and career growth.",
         technologies: ["Soldering", "Programming", "Networking"],
+        logo: "/rowanieee.jpeg",
         current: true,
     },
     {
@@ -60,6 +66,7 @@ const experiences = [
         description:
             "Relay announcements from the athletic department to teammates. Volunteer for events hosted by the athletic department.",
         technologies: ["Leadership", "Community Service"],
+        logo: "/rowan.svg",
         current: true,
     },
 ]
@@ -110,7 +117,18 @@ export const Experience = () => {
                                         : "md:col-start-2 md:pl-16"
                                     }`}
                                 >
-                                    <div className={`glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500`}>
+                                    <div className={`glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500 relative pr-16 ${
+                                        idx % 2 === 0 ? "md:pl-16 md:pr-6" : "md:pr-16"
+                                    }`}>
+                                        {exp.logo && (
+                                            <img
+                                                src={exp.logo}
+                                                alt={`${exp.company} logo`}
+                                                className={`absolute top-4 right-4 w-10 h-10 rounded-lg object-cover border border-primary/30 bg-background/50 p-1 ${
+                                                    idx % 2 === 0 ? "md:left-4 md:right-auto" : "md:right-4"
+                                                }`}
+                                            />
+                                        )}
                                         <span className="text-sm text-primary font-medium">{exp.period}</span>
                                         <h3 className="text-xl font-semibold mt-2">{exp.role}</h3>
                                         <p className="text-muted-foreground">{exp.company}</p>

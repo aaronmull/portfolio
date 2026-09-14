@@ -88,7 +88,7 @@ export const Hero = () => {
                                 <span className="text-primary glow-text"> Portfolio</span>
                             </h1>
                             <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                                Hello, I am Aaron Mull. I'm an ECE student at Rowan University, 
+                                Hello, I'm Aaron Mull. I'm an ECE student at Rowan University, 
                                 interested in robotics and embedded systems. I look forward to
                                 connecting with you!
                             </p>
@@ -100,10 +100,12 @@ export const Hero = () => {
                                     Contact Me <ArrowRight className="w-5 h-5" />
                                 </Button>
                             </a>
-                            <AnimatedBorderButton>
-                                <ArrowUpRight className="w-5 h-5"/>
-                                View Resume
-                            </AnimatedBorderButton>
+                            <a href="/Aaron_Mull_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                                <AnimatedBorderButton>
+                                    <ArrowUpRight className="w-5 h-5"/>
+                                    View Resume
+                                </AnimatedBorderButton>
+                            </a>
                         </div>
                         
                         {/* Social Links */}
