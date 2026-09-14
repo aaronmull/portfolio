@@ -12,7 +12,7 @@ const contactInfo = [
     },
     {
         icon: Mail,
-        label: "Rowan Email",
+        label: "University Email",
         value: "mullaa62@rowan.edu",
         href: "mailto:mullaa62@rowan.edu"
     },
