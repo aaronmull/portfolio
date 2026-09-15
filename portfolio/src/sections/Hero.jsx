@@ -129,7 +129,7 @@ export const Hero = () => {
                         <div className="relative max-w-md mx-auto">
                             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" />
                             <div className="relative glass rounded-3xl p-2 glow-border">
-                                <img src="/meatball.png" alt="Aaron Mull" className="w-full aspect-[4/5] object-cover rounded-2xl"/>
+                                <img src="/aaronmull.jpg" alt="Aaron Mull" className="w-full aspect-[4/5] object-cover rounded-2xl"/>
 
                                 {/* Floating Badge */}
                                 <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
@@ -149,7 +149,7 @@ export const Hero = () => {
 
                 </div>
                 {/* Skills */}
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden animate-fade-in animation-delay-600">
                     <div className="flex w-max animate-marquee">
                         {[...skills, ...skills].map((skill, idx) => (
                             <div key={idx} className="flex-shrink-0 px-8 py-4">
