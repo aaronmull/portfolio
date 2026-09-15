@@ -1,37 +1,47 @@
-const experiences = [
+const clubs = [
     {
         period: "Sep. 2026 - Present",
-        role: "Student Worker",
-        company: "ECE Resource Center - Rowan University",
+        role: "Learning Assistant",
+        company: "Rowan University College of Science & Mathematics",
         description:
-            "Refactoring and maintaining ECERC website, assembling and soldering PCBs, and filling component orders.",
-        technologies: ["Soldering", "PCB Assembly", "3-D Printing", "Programming", "Collaboration"],
-        logo: "/ecerc.jpeg",
+            "Supporting 40+ students in understanding mechanics via weekly office hours and one-on-one sessions.",
+        technologies: ["Teaching", "Communication"],
+        logo: "/rowancsm.jpeg",
         current: true,
     },
     {
-        period: "Jun. 2026 - Sep. 2026",
-        role: "Electrical Project Management Intern",
-        company: "C.J. Watson Electrical Contractor",
+        period: "Sep. 2026 - Present",
+        role: "Club Member",
+        company: "Robotics and Automation Society, Rowan University",
         description:
-            "Assisted project manager in reading schematics, designing panel schedules, and obeying electrical codes. Utilized Revit to generate mock-ups involving power distribution, lighting systems, and load calculations.",
-        technologies: ["Revit", "NEC Codes", "Scheduling", "Mock-Ups"],
-        logo: "/cjwatson.jpeg",
-        current: false,
+            "Attended weekly meetings and workshops to develop robotics skills and contribute to club projects.",
+        technologies: ["Robotics", "Collaboration"],
+        logo: "/rowanras.jpg",
+        current: true,
     },
     {
-        period: "Feb. 2023 - Present",
-        role: "Quick Service Food and Beverage Worker",
-        company: "DiDonato's Family Fun Center: Pin Deck",
+        period: "Sep. 2025 - Present",
+        role: "Club Member",
+        company: "Institute of Electrical and Electronic Engineers, Rowan University",
         description:
-            "Proactively memorized, prepared, and distributed over 50 company recipes. Fulfilled orders as shift lead with satisfactory speed while handling cash and other forms of payment.",
-        technologies: ["Leadership", "Fast-Paced", "Organization", "Teamwork"],
-        logo: "/didonatos.jpeg",
+            "Attended biweekly meetings, workshops, and info sessions for hands-on skills, networking, and career growth.",
+        technologies: ["Soldering", "Programming", "Networking"],
+        logo: "/rowanieee.jpeg",
         current: true,
-    }
+    },
+    {
+        period: "Sep. 2024 - Present",
+        role: "Track and Field Team Representative",
+        company: "Student Athlete Advisory Committee, Rowan University Athletics",
+        description:
+            "Relay announcements from the athletic department to teammates. Volunteer for events hosted by the athletic department.",
+        technologies: ["Leadership", "Community Service"],
+        logo: "/rowan.svg",
+        current: true,
+    },
 ]
 
-export const Experience = () => {
+export const Clubs = () => {
     return (
         <section
             id="experience"
@@ -46,11 +56,11 @@ export const Experience = () => {
                 {/* Section Header */}
                 <div className="max-w-3xl mb-16">
                     <span className="text-4xl md:text-5xl font-bold mb-6 text-secondary-foreground tracking-wider uppercase animate-fade-in">
-                        Internships<span className="font-serif italic font-normal text-white"> & </span>Work Experience
+                        Clubs<span className="font-serif italic font-normal text-white"> & </span>Extracurriculars
                     </span>
                     <p className="mt-4 text-muted-foreground animate-fade-in animation-delay-100">
-                        A timeline of my career experiences, including engineering
-                        work and general employment history.
+                        A timeline of my on-campus involvement, including 
+                        clubs and other extracurricular activities.
                     </p>
                 </div>
 
@@ -60,7 +70,7 @@ export const Experience = () => {
 
                     {/* Experiences */}
                     <div className="space-y-12">
-                        {experiences.map((exp, idx) => (
+                        {clubs.map((exp, idx) => (
                             <div key={idx} className="relative grid md:grid-cols-2 gap-8 animate-fade-in" style={{ animationDelay: `${(idx + 1) * 150}ms`}}>
                                 {/* Timeline Dot */}
                                 <div className="absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10">
