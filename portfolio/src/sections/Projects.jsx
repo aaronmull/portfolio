@@ -22,7 +22,7 @@ const projects = [
         title: "Magnetic Microbots [in progress]",
         description:
             "Developing a controls system for microscopic magnetic robots with the end goal of utilizing the robots within the human body to assist with surgeries and drug delivery.",
-        images: ["/projects/project3_2.gif", "/projects/project3_1.jpg"],
+        images: ["/projects/project3_2.gif", "/projects/project3_1.JPG"],
         tags: ["Magnetism", "Python", "MATLAB"],
         link: "",
         github: "",
@@ -83,17 +83,17 @@ const ProjectCard = ({ project, idx }) => {
                 {/* Cycle Arrows */}
                 {hasMultiple && (
                     <>
-                        <button onClick={goPrev} aria-label="Previous Image" className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full glass opacity-0 group-hover:opacity-100 hover:bg-primary hover:text-primary-foreground transition-all duration-300 z-10">
+                        <button onClick={goPrev} aria-label="Previous Image" className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full glass opacity-30 group-hover:opacity-100 hover:bg-primary hover:text-primary-foreground transition-all duration-300 z-10">
                             <ChevronLeft className="w-4 h-4"/>
                         </button>
-                        <button onClick={goNext} aria-label="Next Image" className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full glass opacity-0 group-hover:opacity-100 hover:bg-primary hover:text-primary-foreground transition-all duration-300 z-10">
+                        <button onClick={goNext} aria-label="Next Image" className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full glass opacity-30 group-hover:opacity-100 hover:bg-primary hover:text-primary-foreground transition-all duration-300 z-10">
                             <ChevronRight className="w-4 h-4"/>
                         </button>
                     </>
                 )}
 
                 {/* Overlay Links */}
-                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-20 group-hover:opacity-100 transition-opacity duration-300">
                     {project.link && (
                         <a href={project.link} target="_blank" className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all">
                             <ArrowUpRight className="w-5 h-5"/>
