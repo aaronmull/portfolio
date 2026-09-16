@@ -4,6 +4,7 @@ import { Hero } from "@/sections/Hero";
 import { About } from "@/sections/About";
 import { Projects } from "@/sections/Projects";
 import { Experience } from "@/sections/Experience";
+import { Clubs } from "./sections/Clubs";
 import { Contact } from "@/sections/Contact";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <About />
       <Projects />
       <Experience />
+      <Clubs />
       <Contact />
     </main>
     <Footer />
