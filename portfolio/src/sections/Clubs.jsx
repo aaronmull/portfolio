@@ -56,7 +56,7 @@ export const Clubs = () => {
                 {/* Section Header */}
                 <div className="max-w-3xl mb-16">
                     <span className="text-4xl md:text-5xl font-bold mb-6 text-secondary-foreground tracking-wider uppercase animate-fade-in">
-                        Clubs<span className="font-serif italic font-normal text-white"> & </span>Extracurriculars
+                        Campus<span className="font-serif italic font-normal text-white"> Involvement</span>
                     </span>
                     <p className="mt-4 text-muted-foreground animate-fade-in animation-delay-100">
                         A timeline of my on-campus involvement, including 
