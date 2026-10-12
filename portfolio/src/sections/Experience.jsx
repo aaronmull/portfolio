@@ -4,7 +4,7 @@ const experiences = [
         role: "Student Worker",
         company: "ECE Resource Center - Rowan University",
         description:
-            "Refactoring and maintaining ECERC website, assembling and soldering PCBs, and filling component orders.",
+            "Calibrating equipment using SCPI / MATLAB, assembling and soldering PCBs, and filling component orders.",
         technologies: ["Soldering", "PCB Assembly", "3-D Printing", "Programming", "Collaboration"],
         logo: "/ecerc.jpeg",
         current: true,
